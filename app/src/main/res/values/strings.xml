@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Level2__example</string>
     <string name="action_settings">Settings</string>
+    <string name="toast_Message">You must fill in the input field!</string>
+    <string name="reminder">Reminder</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.iflippie.level2__example
+package com.iflippie.level2__example.ui
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.iflippie.level2__example.R
+import com.iflippie.level2__example.model.Reminder
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -16,15 +18,17 @@ import kotlinx.android.synthetic.main.content_main.*
 class MainActivity : AppCompatActivity() {
 
     private val reminders = arrayListOf<Reminder>()
-    private val reminderAdapter = ReminderAdapter(reminders)
+    private val reminderAdapter =
+        ReminderAdapter(reminders)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        reminders.add(Reminder("ok"))
-        reminders.add(Reminder("boomer"))
+        //test adds
+//        reminders.add(Reminder("ok"))
+//        reminders.add(Reminder("boomer"))
 
         initViews()
         fab.setOnClickListener {
@@ -43,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             reminderAdapter.notifyDataSetChanged()
             etReminder.text?.clear()
         } else {
-            Snackbar.make(etReminder, "You must fill in the input field!", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(etReminder, getString(R.string.toast_Message), Snackbar.LENGTH_SHORT).show()
         }
     }
 
